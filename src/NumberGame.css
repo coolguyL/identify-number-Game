@@ -1,0 +1,129 @@
+/* src/NumberGame.css */
+
+.number-game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  position: relative;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../public/BG_0.png'); /* Replace with your image path */
+  background-size: cover;
+  /* filter: opacity(0.2); */
+  z-index: -1;
+}
+
+.game-content {
+  text-align: center;
+   width: 100%;
+  height: 100%;
+}
+
+.question {
+  margin-top: 20px;
+  color: white;
+}
+
+.question-text {
+  font-size: 24px;
+   border: solid 8px rgb(202, 218, 233);
+     box-shadow: 1px 1px rgb(16, 126, 235);
+  border-radius: 10px;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+.number-container {
+  display: grid;
+  grid-template-columns: repeat(3, 5fr);
+  justify-items: center;
+   grid-gap: 100px;
+  margin-top: 30px;
+}
+
+
+.number {
+  font-size: 32px;
+  width: 100px;
+  height: 100px;
+  border: solid 8px rgb(202, 218, 233);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3EA3BE;
+  color: rgb(15, 4, 4);
+  cursor: pointer;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.number:hover {
+  transform: scale(1.1);
+  background-color: #6CCEF0;
+  opacity: 0.8;
+}
+
+.number.correct {
+  background-color: #4caf50;
+  
+}
+
+.number.incorrect {
+ background-color: #f44336;
+}
+
+/* .selected {
+  background-color: #f44336;
+} */
+
+.message {
+  font-size: 24px;
+  margin-top: 20px;
+  color: #4caf50;
+}
+
+.message.correct {
+  color: #4caf50;
+    font-size: 30px;
+  margin-top: 20px;
+ /* border: solid 2px rgb(202, 218, 233); */
+   border-radius: 10px;
+}
+.message.wrong {
+  color: #f44336;
+    font-size: 30px;
+  margin-top: 20px;
+  /* border: solid 2px rgb(202, 218, 233); */
+    border-radius: 10px;
+}
+
+/* Media Query for Responsiveness */
+
+@media (max-width: 3840px) {
+  .number-container {
+    gap: 100px;
+  }
+
+  .question-text {
+    font-size: 30px;
+  }
+
+  .number {
+    font-size: 40px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .message {
+    font-size: 30px;
+  }
+}
+
